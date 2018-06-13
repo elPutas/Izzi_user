@@ -9,6 +9,7 @@ import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.sietecerouno.izzi_user.sections.HomeActivity
 import com.sietecerouno.izzi_user.sections.LoginActivity
+import com.sietecerouno.izzi_user.sections.PreHomeActivity
 
 class MainActivity : BaseActivity()
 {
@@ -27,12 +28,12 @@ class MainActivity : BaseActivity()
         if (user != null) {
             println("user not null")
             //goto home
-            val i = Intent(this, HomeActivity::class.java)
+            val i = Intent(this, PreHomeActivity::class.java)
             startActivity(i)
         }else{
             println("user null")
             //goto log
-            val i = Intent(this, HomeActivity::class.java)
+            val i = Intent(this, LoginActivity::class.java)
             startActivity(i)
         }
 

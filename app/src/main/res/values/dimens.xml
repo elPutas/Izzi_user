@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="width_btn">300dp</dimen>
+    <dimen name="padding_btn">10dp</dimen>
+    <dimen name="marginItemsLinear">10dp</dimen>
+    <dimen name="extraMarginTopLinear">80dp</dimen>
+</resources>

@@ -1,9 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     tools:context="com.sietecerouno.izzi_user.sections.LoginActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp" />
+    <TextView
+        android:id="@+id/btn_login"
+        android:background="@drawable/bg_button_white"
+        android:paddingTop="@dimen/padding_btn"
+        android:paddingBottom="@dimen/padding_btn"
+        android:textAlignment="center"
+        android:layout_marginTop="@dimen/marginItemsLinear"
+        android:text="Iniciar Sesión"
+        android:layout_width="@dimen/width_btn"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/btn_register"
+        android:paddingTop="@dimen/padding_btn"
+        android:paddingBottom="@dimen/padding_btn"
+        android:textAlignment="center"
+        android:layout_marginTop="@dimen/marginItemsLinear"
+        android:background="@drawable/bg_button_green"
+        android:text="Crear cuenta"
+        android:layout_width="@dimen/width_btn"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/btn_fb"
+        android:paddingTop="@dimen/padding_btn"
+        android:paddingBottom="@dimen/padding_btn"
+        android:textAlignment="center"
+        android:layout_marginTop="@dimen/marginItemsLinear"
+        android:textColor="@color/colorPrimary"
+        android:background="@drawable/bg_button_blue"
+        android:text="Facebook"
+        android:layout_width="@dimen/width_btn"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
