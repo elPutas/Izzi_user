@@ -1,0 +1,101 @@
+{
+  "project_info": {
+    "project_number": "21903604228",
+    "firebase_url": "https://izzi-app-8e3bf.firebaseio.com",
+    "project_id": "izzi-app-8e3bf",
+    "storage_bucket": "izzi-app-8e3bf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:21903604228:android:e2e4019ce30c60d5",
+        "android_client_info": {
+          "package_name": "com.sietecerouno.izzi_empleadas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "21903604228-v4pqddqtutbvpti3rqh23equ9r85inbv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sietecerouno.izzi_empleadas",
+            "certificate_hash": "c985f07e1957d275e2d0a1bec746a0671690421f"
+          }
+        },
+        {
+          "client_id": "21903604228-5ja8pc17ilpnvr1i36b1ikmcno0ujvjd.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "21903604228-5ja8pc17ilpnvr1i36b1ikmcno0ujvjd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC70f3-9L-p8HK_hlTdKKPbMN398MKYwPg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "21903604228-5ja8pc17ilpnvr1i36b1ikmcno0ujvjd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "21903604228-8avgtba0fl546csfjmq8ua1joarp25i1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "sietecerouno.izzi-prod"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:21903604228:android:6e5cf732856574d9",
+        "android_client_info": {
+          "package_name": "com.sietecerouno.izzi_user"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "21903604228-5ja8pc17ilpnvr1i36b1ikmcno0ujvjd.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "21903604228-5ja8pc17ilpnvr1i36b1ikmcno0ujvjd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC70f3-9L-p8HK_hlTdKKPbMN398MKYwPg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
