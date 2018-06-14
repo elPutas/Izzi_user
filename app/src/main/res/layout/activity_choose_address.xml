@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/paddingLinear"
+    tools:context="com.sietecerouno.izzi_user.modals.ChooseAddressActivity">
+
+    <TextView
+        android:layout_marginTop="@dimen/extraMarginTopLinear"
+        android:layout_marginBottom="@dimen/marginItemsLinear"
+        android:paddingTop="@dimen/padding_btn"
+        android:paddingBottom="@dimen/padding_btn"
+        android:textAlignment="center"
+        android:id="@+id/btn_detail"
+        app:layout_constraintBottom_toTopOf="@id/btn_next"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:background="@drawable/bg_button_green"
+        android:text="Seleccionar"
+        android:layout_width="@dimen/width_btn"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_marginTop="@dimen/marginItemsLinear"
+        android:paddingTop="@dimen/padding_btn"
+        android:paddingBottom="@dimen/padding_btn"
+        android:textAlignment="center"
+        android:id="@+id/btn_next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:background="@drawable/bg_button_gray"
+        android:text="Agregar nueva"
+        android:layout_width="@dimen/width_btn"
+        android:layout_height="wrap_content" />
+
+</android.support.constraint.ConstraintLayout>

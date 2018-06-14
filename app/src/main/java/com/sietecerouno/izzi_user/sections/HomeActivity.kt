@@ -18,6 +18,11 @@ class HomeActivity : BaseActivity()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
+        //set header
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setTitle("")
+        supportActionBar?.setElevation(0.0f)
+
 
         val pageAdapter = PageAdapter(supportFragmentManager)
 
@@ -34,11 +39,11 @@ class HomeActivity : BaseActivity()
         */
 
         // set icons
-        val tabs = findViewById<View>(R.id.tabs) as TabLayout
+        //val tabs = findViewById<View>(R.id.tabs) as TabLayout
         view_pager.adapter = pageAdapter
         tabs.setupWithViewPager(view_pager)
 
-        tabs.getTabAt(0)!!.setIcon(R.drawable.home_btn)
+        //tabs.getTabAt(0)!!.setIcon(R.drawable.home_btn)
 
 
 

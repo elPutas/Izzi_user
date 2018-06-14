@@ -1,0 +1,42 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/paddingLinear"
+    tools:context="com.sietecerouno.izzi_user.fragments.ServiceFragment">
+
+    <TextView
+        android:id="@+id/total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total" />
+
+    <android.support.v7.widget.RecyclerView
+        android:textAlignment="center"
+        android:id="@+id/recyclerView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/marginItemsLinear"
+        android:layout_marginBottom="@dimen/marginItemsLinear"
+        app:layout_constraintTop_toBottomOf="@id/total"
+        app:layout_constraintBottom_toTopOf="@id/btn_next"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:scrollbars="vertical"/>
+
+    <TextView
+
+        android:paddingTop="@dimen/padding_btn"
+        android:paddingBottom="@dimen/padding_btn"
+        android:textAlignment="center"
+        android:id="@+id/btn_next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:background="@drawable/bg_button_green"
+        android:text="Siguiente"
+        android:layout_width="@dimen/width_btn"
+        android:layout_height="wrap_content" />
+
+</android.support.constraint.ConstraintLayout>
