@@ -19,7 +19,8 @@
         <activity android:name=".sections.LoginActivity" />
         <activity android:name=".sections.HomeActivity" />
         <activity android:name=".sections.RegisterActivity" />
-        <activity android:name=".sections.PreHomeActivity"></activity>
+        <activity android:name=".sections.PreHomeActivity" />
+        <activity android:name=".sections.RealLoginActivity"></activity>
     </application>
 
 </manifest>

@@ -1,9 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     tools:context="com.sietecerouno.izzi_user.sections.PreHomeActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:layout_marginTop="@dimen/extraMarginTopLinear"
+        android:textStyle="bold"
+        android:text="Bienvenidos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_marginTop="@dimen/marginItemsLinear"
+        android:textAlignment="center"
+        android:text="Agenda un servicio de \nlimpieza"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/btn_service"
+        android:layout_marginTop="@dimen/extraMarginTopLinear"
+        android:paddingTop="@dimen/padding_btn"
+        android:paddingBottom="@dimen/padding_btn"
+        android:background="@drawable/bg_button_green"
+        android:textAlignment="center"
+        android:text="Pide tu servicio"
+        android:layout_width="@dimen/width_btn"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/btn_pack"
+        android:layout_marginTop="@dimen/marginItemsLinear"
+        android:paddingTop="@dimen/padding_btn"
+        android:paddingBottom="@dimen/padding_btn"
+        android:background="@drawable/bg_button_white"
+        android:textAlignment="center"
+        android:text="Paquete de servicios"
+        android:layout_width="@dimen/width_btn"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_marginTop="@dimen/marginItemsLinear"
+        android:textAlignment="center"
+        android:text="Terminos y condiciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

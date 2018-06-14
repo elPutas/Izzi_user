@@ -4,6 +4,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.WindowManager
 import android.widget.TextView
 import com.sietecerouno.izzi_user.BaseActivity
 import com.sietecerouno.izzi_user.R
@@ -16,6 +17,10 @@ class LoginActivity : BaseActivity()
     {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        //hide header
+        supportActionBar?.hide()
+
 
         val btn_register = findViewById<TextView>(R.id.btn_register)
         val btn_fb = findViewById<TextView>(R.id.btn_fb)
@@ -45,10 +50,13 @@ class LoginActivity : BaseActivity()
     {
         val i = Intent(this, RegisterActivity::class.java)
         startActivity(i)
+        finish()
     }
     private fun gotoLog()
     {
-        print("click log")
+        val i = Intent(this, RealLoginActivity::class.java)
+        startActivity(i)
+        finish()
     }
     private fun gotoFB()
     {

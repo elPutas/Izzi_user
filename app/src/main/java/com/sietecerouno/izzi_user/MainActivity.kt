@@ -30,11 +30,13 @@ class MainActivity : BaseActivity()
             //goto home
             val i = Intent(this, PreHomeActivity::class.java)
             startActivity(i)
+            finish()
         }else{
             println("user null")
             //goto log
             val i = Intent(this, LoginActivity::class.java)
             startActivity(i)
+            finish()
         }
 
     }

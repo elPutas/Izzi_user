@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="@dimen/paddingLinear"
+    android:gravity="center_horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sietecerouno.izzi_user.sections.RealLoginActivity">
+
+    <EditText
+        android:id="@+id/user"
+        android:layout_marginTop="@dimen/marginItemsLinear"
+        android:hint="Usuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/pass"
+        android:inputType="textPassword"
+        android:layout_marginTop="@dimen/marginItemsLinear"
+        android:hint="Contraseña"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/btn_next"
+        android:layout_marginTop="@dimen/extraMarginTopLinear"
+        android:paddingTop="@dimen/padding_btn"
+        android:paddingBottom="@dimen/padding_btn"
+        android:textAlignment="center"
+        android:background="@drawable/bg_button_green"
+        android:text="Enviar"
+        android:layout_width="@dimen/width_btn"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

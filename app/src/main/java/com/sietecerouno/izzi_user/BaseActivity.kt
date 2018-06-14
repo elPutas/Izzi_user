@@ -9,12 +9,3 @@ import com.google.firebase.firestore.FirebaseFirestore
  * Created by Gio on 13/06/18.
  */
 open class BaseActivity : AppCompatActivity()
-{
-    lateinit var db: FirebaseFirestore
-
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
-
-        db = FirebaseFirestore.getInstance()
-    }
-}
