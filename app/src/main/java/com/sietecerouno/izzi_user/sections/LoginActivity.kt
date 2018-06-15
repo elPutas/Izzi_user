@@ -33,11 +33,7 @@ class LoginActivity : BaseActivity()
                 R.id.btn_login -> gotoLog()
                 R.id.btn_fb -> gotoFB()
             }
-
-
         }
-
-
 
         btn_register.setOnClickListener( onClickListener )
         btn_fb.setOnClickListener( onClickListener )

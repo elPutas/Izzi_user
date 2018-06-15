@@ -8,13 +8,24 @@
     tools:context="com.sietecerouno.izzi_user.modals.ChooseAddressActivity">
 
     <TextView
+        app:layout_constraintBottom_toBottomOf="@id/btn_select"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/bg_button_black"
+        android:textColor="@android:color/white"
+        android:text="No tienes direcciones guardadas"
+        android:padding="@dimen/padding_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
         android:layout_marginTop="@dimen/extraMarginTopLinear"
         android:layout_marginBottom="@dimen/marginItemsLinear"
         android:paddingTop="@dimen/padding_btn"
         android:paddingBottom="@dimen/padding_btn"
         android:textAlignment="center"
-        android:id="@+id/btn_detail"
-        app:layout_constraintBottom_toTopOf="@id/btn_next"
+        android:id="@+id/btn_select"
+        app:layout_constraintBottom_toTopOf="@id/btn_new"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:background="@drawable/bg_button_green"
@@ -27,7 +38,7 @@
         android:paddingTop="@dimen/padding_btn"
         android:paddingBottom="@dimen/padding_btn"
         android:textAlignment="center"
-        android:id="@+id/btn_next"
+        android:id="@+id/btn_new"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

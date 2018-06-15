@@ -9,18 +9,20 @@
       android:roundIcon="@mipmap/ic_launcher_round"
       android:supportsRtl="true"
       android:theme="@style/AppTheme">
-    <activity android:name=".MainActivity">
+    <activity android:screenOrientation="portrait" android:name=".MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
 
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
-    <activity android:name=".sections.LoginActivity" />
-    <activity android:name=".sections.HomeActivity" />
-    <activity android:name=".sections.RegisterActivity" />
-    <activity android:name=".sections.PreHomeActivity" />
-    <activity android:name=".sections.RealLoginActivity"></activity>
+    <activity android:screenOrientation="portrait" android:name=".modals.AddAddressActivity" />
+    <activity android:screenOrientation="portrait" android:name=".modals.ChooseAddressActivity" />
+    <activity android:screenOrientation="portrait" android:name=".sections.LoginActivity" />
+    <activity android:screenOrientation="portrait" android:name=".sections.HomeActivity" />
+    <activity android:screenOrientation="portrait" android:name=".sections.RegisterActivity" />
+    <activity android:screenOrientation="portrait" android:name=".sections.PreHomeActivity" />
+    <activity android:screenOrientation="portrait" android:name=".sections.RealLoginActivity"></activity>
   </application>
 
 </manifest>

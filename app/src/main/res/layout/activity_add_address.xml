@@ -4,6 +4,68 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="@dimen/paddingLinear"
     tools:context="com.sietecerouno.izzi_user.modals.AddAddressActivity">
+
+    <LinearLayout
+        android:padding="@dimen/paddingLinear"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:hint="Calle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:layout_width="@dimen/width_address"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text=" # "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <EditText
+
+                android:layout_width="@dimen/width_address"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text=" - "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:layout_width="@dimen/width_address"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <EditText
+            android:hint="Ej: apto 502, of 401"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:hint="Ciudad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="@dimen/marginItemsLinear"
+        android:paddingTop="@dimen/padding_btn"
+        android:paddingBottom="@dimen/padding_btn"
+        android:textAlignment="center"
+        android:id="@+id/btn_new"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:background="@drawable/bg_button_gray"
+        android:text="Agregar dirección"
+        android:layout_width="@dimen/width_btn"
+        android:layout_height="wrap_content" />
 
 </android.support.constraint.ConstraintLayout>

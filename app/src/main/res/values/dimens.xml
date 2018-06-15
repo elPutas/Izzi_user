@@ -5,4 +5,5 @@
     <dimen name="marginItemsLinear">10dp</dimen>
     <dimen name="extraMarginTopLinear">80dp</dimen>
     <dimen name="paddingLinear">20dp</dimen>
+    <dimen name="width_address">70dp</dimen>
 </resources>

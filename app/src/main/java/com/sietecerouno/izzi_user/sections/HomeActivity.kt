@@ -1,10 +1,13 @@
 package com.sietecerouno.izzi_user.sections
 
 
+import android.os.Build
 import android.os.Bundle
 import android.support.design.widget.TabLayout
 import android.support.v7.widget.Toolbar
+import android.view.LayoutInflater
 import android.view.View
+import android.widget.TextView
 import com.sietecerouno.izzi_user.BaseActivity
 import com.sietecerouno.izzi_user.R
 import com.sietecerouno.izzi_user.adapters.PageAdapter
@@ -31,18 +34,23 @@ class HomeActivity : BaseActivity()
         pageAdapter.add(ProfileFragment.newInstance("profile", "test"), "Perfil")
         pageAdapter.add(ReserveFragment.newInstance("service", "test"), "Reservar")
 
-        /*
+        view_pager.adapter = pageAdapter
+        tabs.setupWithViewPager(view_pager)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            tabs.elevation=0.0f
+        }
+
         for (i in 0 until 4)
         {
-            pageAdapter.add(PageFragment.newInstance(i), "ICOn$i")
+            //pageAdapter.add(PageFragment.newInstance(i), "ICOn$i")
+            val inflater:LayoutInflater = LayoutInflater.from(this)
+            val tv = inflater.inflate(R.layout.custom_txt, null)
+            tabs.getTabAt(i)!!.setCustomView(tv)
         }
-        */
+
 
         // set icons
         //val tabs = findViewById<View>(R.id.tabs) as TabLayout
-        view_pager.adapter = pageAdapter
-        tabs.setupWithViewPager(view_pager)
-
         //tabs.getTabAt(0)!!.setIcon(R.drawable.home_btn)
 
 

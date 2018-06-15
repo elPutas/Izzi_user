@@ -12,6 +12,14 @@
         android:layout_height="wrap_content"
         android:text="Total" />
 
+    <TextView
+        android:layout_marginLeft="@dimen/extraMarginTopLinear"
+        app:layout_constraintLeft_toRightOf="@id/total"
+        android:id="@+id/total_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$000.000" />
+
     <android.support.v7.widget.RecyclerView
         android:textAlignment="center"
         android:id="@+id/recyclerView"

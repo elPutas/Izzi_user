@@ -1,7 +1,6 @@
 package com.sietecerouno.izzi_user.fragments
 
 import android.os.Bundle
-import android.provider.ContactsContract
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -10,13 +9,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.google.android.gms.tasks.OnCompleteListener
-import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
 
 import com.sietecerouno.izzi_user.R
-import com.sietecerouno.izzi_user.adapters.RecyclerAdapter
-import kotlinx.android.synthetic.main.fragment_services.*
+import com.sietecerouno.izzi_user.adapters.RecyclerAdapterServices
 
 
 class ServiceFragment : Fragment()
@@ -31,6 +28,7 @@ class ServiceFragment : Fragment()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         db = FirebaseFirestore.getInstance()
+
         if (arguments != null) {
             mParam1 = arguments!!.getString(ARG_PARAM1)
             mParam2 = arguments!!.getString(ARG_PARAM2)
@@ -41,8 +39,6 @@ class ServiceFragment : Fragment()
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val v : View = inflater.inflate(R.layout.fragment_services, container, false)
-
-        println("ServiceFragment")
 
 
         linearLayoutManager = LinearLayoutManager(context)
@@ -58,7 +54,7 @@ class ServiceFragment : Fragment()
                         {
                             data_name.add(document.data.get("titulo").toString())
                         }
-                        recyclerView.adapter = RecyclerAdapter(data_name, this.context!!)
+                        recyclerView.adapter = RecyclerAdapterServices(data_name, this.context!!)
                     } else {
                         Log.i(TAG, "Error getting documents: ", task.exception)
                     }

@@ -56,6 +56,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/addres_item"
             android:layout_marginTop="@dimen/marginItemsLinear"
             android:orientation="horizontal"
             android:layout_width="match_parent"
