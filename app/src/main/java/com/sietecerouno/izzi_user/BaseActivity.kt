@@ -9,3 +9,14 @@ import com.google.firebase.firestore.FirebaseFirestore
  * Created by Gio on 13/06/18.
  */
 open class BaseActivity : AppCompatActivity()
+{
+    companion object {
+        //user
+        var idUser = ""
+
+        //request
+        var idReq = ""
+        
+    }
+
+}

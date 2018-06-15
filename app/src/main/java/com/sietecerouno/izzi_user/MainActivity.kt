@@ -3,6 +3,7 @@ package com.sietecerouno.izzi_user
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.DocumentReference
@@ -26,13 +27,14 @@ class MainActivity : BaseActivity()
 
 
         if (user != null) {
-            println("user not null")
+            idUser = user.uid
+
             //goto home
             val i = Intent(this, PreHomeActivity::class.java)
             startActivity(i)
             finish()
         }else{
-            println("user null")
+
             //goto log
             val i = Intent(this, LoginActivity::class.java)
             startActivity(i)

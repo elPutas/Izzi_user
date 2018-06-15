@@ -5,11 +5,13 @@ import android.content.Intent
 import android.graphics.drawable.ColorDrawable
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
+import com.sietecerouno.izzi_user.BaseActivity
 import com.sietecerouno.izzi_user.R
 
-class ChooseAddressActivity : AppCompatActivity()
+class ChooseAddressActivity : BaseActivity()
 {
 
     @SuppressLint("ResourceAsColor")
@@ -41,12 +43,22 @@ class ChooseAddressActivity : AppCompatActivity()
 
     private fun gotoNew()
     {
-        val i : Intent = Intent(this, AddAddressActivity::class.java)
+        val i  = Intent(this, AddAddressActivity::class.java)
         startActivity(i)
     }
 
     private fun select()
     {
 
+    }
+
+    //back btn
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        return if (item?.itemId == android.R.id.home) {
+            finish()
+            true
+        } else {
+            super.onOptionsItemSelected(item)
+        }
     }
 }

@@ -30,6 +30,7 @@
         android:layout_height="wrap_content">
 
         <LinearLayout
+            android:id="@+id/date_item"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -49,7 +50,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <TextView
-                    android:text="Selecciona una fecha y hora"
+                    android:id="@+id/date_text"
+                    android:hint="Selecciona una fecha y hora"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
@@ -148,5 +150,63 @@
         android:text="Siguiente"
         android:layout_width="@dimen/width_btn"
         android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/calendarContainer"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <CalendarView
+            android:background="@android:color/white"
+            android:id="@+id/calendarView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/marginItemsLinear"
+            android:paddingTop="@dimen/padding_btn"
+            android:paddingBottom="@dimen/padding_btn"
+            android:textAlignment="center"
+            android:id="@+id/btn_okDate"
+            android:background="@drawable/bg_button_green"
+            android:text="Aceptar"
+            android:layout_width="@dimen/width_btn"
+            android:layout_height="wrap_content" />
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/timeContainer"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TimePicker
+            android:id="@+id/timePicker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginTop="@dimen/marginItemsLinear"
+            android:paddingTop="@dimen/padding_btn"
+            android:paddingBottom="@dimen/padding_btn"
+            android:textAlignment="center"
+            android:id="@+id/btn_okTime"
+            android:background="@drawable/bg_button_green"
+            android:text="Aceptar"
+            android:layout_width="@dimen/width_btn"
+            android:layout_height="wrap_content" />
+
+
+
+    </LinearLayout>
+
+
 
 </android.support.constraint.ConstraintLayout>
