@@ -16,7 +16,7 @@ open class BaseActivity : AppCompatActivity()
 
         //request
         var idReq = ""
-        
+
     }
 
 }

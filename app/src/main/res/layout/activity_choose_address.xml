@@ -7,7 +7,21 @@
     android:padding="@dimen/paddingLinear"
     tools:context="com.sietecerouno.izzi_user.modals.ChooseAddressActivity">
 
+    <android.support.v7.widget.RecyclerView
+        android:textAlignment="center"
+        android:id="@+id/recyclerView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/marginItemsLinear"
+        android:layout_marginBottom="@dimen/marginItemsLinear"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_select"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:scrollbars="vertical"/>
+
     <TextView
+        android:id="@+id/no_items"
         app:layout_constraintBottom_toBottomOf="@id/btn_select"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

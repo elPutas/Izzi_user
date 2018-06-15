@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <EditText
+            android:id="@+id/cll1_txt"
             android:hint="Calle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -22,6 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <EditText
+                android:id="@+id/cll2_txt"
                 android:layout_width="@dimen/width_address"
                 android:layout_height="wrap_content" />
             <TextView
@@ -31,7 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <EditText
-
+                android:id="@+id/num1_txt"
                 android:layout_width="@dimen/width_address"
                 android:layout_height="wrap_content" />
             <TextView
@@ -41,14 +43,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <EditText
+                android:id="@+id/num2_txt"
                 android:layout_width="@dimen/width_address"
                 android:layout_height="wrap_content" />
         </LinearLayout>
         <EditText
+            android:id="@+id/info_txt"
             android:hint="Ej: apto 502, of 401"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <EditText
+            android:id="@+id/city_txt"
             android:hint="Ciudad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
