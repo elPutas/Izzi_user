@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/paddingLinear"
+    tools:context="com.sietecerouno.izzi_user.modals.DetailReqActivity">
+    <TextView
+        android:id="@+id/service_title"
+        android:textStyle="bold"
+        android:text="Servicios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/service_title"
+        android:minHeight="@dimen/minHeightText"
+        android:id="@+id/service_txt"
+        android:text="Servicios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <LinearLayout
+        app:layout_constraintTop_toBottomOf="@id/service_txt"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+                <TextView
+                    android:textStyle="bold"
+                    android:text="Dirección:"
+                    android:layout_width="@dimen/width_input"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:text="Cll 1233 # 34 apto 1345 in casa 4 "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textStyle="bold"
+                android:text="Horario:"
+                android:layout_width="@dimen/width_input"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="12/01/18 12:00"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textStyle="bold"
+                android:text="Valor:"
+                android:layout_width="@dimen/width_input"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="$000.000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/btn_save"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="@dimen/width_btn"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_button_green"
+        android:padding="@dimen/padding_btn"
+        android:text="Guardar favorito"
+        android:textAlignment="center" />
+</android.support.constraint.ConstraintLayout>

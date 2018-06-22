@@ -1,5 +1,6 @@
 package com.sietecerouno.izzi_user.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
@@ -8,10 +9,12 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import com.google.firebase.firestore.FirebaseFirestore
 
 import com.sietecerouno.izzi_user.R
 import com.sietecerouno.izzi_user.adapters.RecyclerAdapterProfile
+import com.sietecerouno.izzi_user.modals.DetailReqActivity
 
 
 class ProfileFragment : Fragment() {
@@ -38,6 +41,19 @@ class ProfileFragment : Fragment() {
         // Inflate the layout for this fragment
         val v = inflater.inflate(R.layout.fragment_profile, container, false)
 
+
+
+        val btn_next = v.findViewById<TextView>(R.id.btn_next) as TextView
+
+        val onClickListener : View.OnClickListener = View.OnClickListener { view ->
+            when(view.id)
+            {
+                R.id.btn_next -> gotoDetail()
+            }
+        }
+
+        btn_next.setOnClickListener(onClickListener)
+
         linearLayoutManager = LinearLayoutManager(context)
         val recyclerView = v.findViewById<RecyclerView>(R.id.recyclerView) as RecyclerView
         recyclerView.layoutManager = linearLayoutManager
@@ -54,6 +70,12 @@ class ProfileFragment : Fragment() {
                 }
 
         return v
+    }
+
+    private fun gotoDetail()
+    {
+        val i = Intent(context, DetailReqActivity::class.java)
+        startActivity(i)
     }
 
 

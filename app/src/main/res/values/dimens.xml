@@ -7,4 +7,7 @@
     <dimen name="paddingLinear">20dp</dimen>
     <dimen name="width_address">70dp</dimen>
     <dimen name="width_text_item">200dp</dimen>
+    <dimen name="minHeightText">120dp</dimen>
+    <dimen name="width_input">100dp</dimen>
+    <dimen name="width_tab_current">120dp</dimen>
 </resources>

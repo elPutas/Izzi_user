@@ -3,7 +3,6 @@ package com.sietecerouno.izzi_user.modals
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.drawable.ColorDrawable
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -17,7 +16,6 @@ import com.google.firebase.firestore.QuerySnapshot
 import com.sietecerouno.izzi_user.BaseActivity
 import com.sietecerouno.izzi_user.R
 import com.sietecerouno.izzi_user.adapters.RecyclerAdapterCheckbox
-import com.sietecerouno.izzi_user.adapters.RecyclerAdapterProfile
 
 class ChooseAddressActivity : BaseActivity()
 {
@@ -43,6 +41,7 @@ class ChooseAddressActivity : BaseActivity()
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = linearLayoutManager
 
+
         val data_send :ArrayList<String> = ArrayList()
         val no_items = findViewById<TextView>(R.id.no_items)
 
@@ -67,6 +66,7 @@ class ChooseAddressActivity : BaseActivity()
                 })
 
         val btn_new = findViewById<TextView>(R.id.btn_new) as TextView
+        val btn_select = findViewById<TextView>(R.id.btn_select) as TextView
 
         val onClickListener : View.OnClickListener = View.OnClickListener { view ->
             when(view.id)
@@ -77,6 +77,7 @@ class ChooseAddressActivity : BaseActivity()
         }
 
         btn_new.setOnClickListener(onClickListener)
+        btn_select.setOnClickListener(onClickListener)
 
         checkAddress()
     }
@@ -90,16 +91,18 @@ class ChooseAddressActivity : BaseActivity()
     {
         val i  = Intent(this, AddAddressActivity::class.java)
         startActivity(i)
+        finish()
     }
 
     private fun select()
     {
-
+        finish()
     }
 
     //back btn
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         return if (item?.itemId == android.R.id.home) {
+            BaseActivity.idAddres = ""
             finish()
             true
         } else {

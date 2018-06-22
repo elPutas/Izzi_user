@@ -1,23 +1,27 @@
 package com.sietecerouno.izzi_user.sections
 
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.support.design.widget.TabLayout
 import android.support.v7.widget.Toolbar
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
 import com.sietecerouno.izzi_user.BaseActivity
 import com.sietecerouno.izzi_user.R
 import com.sietecerouno.izzi_user.adapters.PageAdapter
 import com.sietecerouno.izzi_user.fragments.*
+import com.sietecerouno.izzi_user.modals.CurrentActivity
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : BaseActivity()
 {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?)
+    {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
@@ -53,8 +57,20 @@ class HomeActivity : BaseActivity()
         //val tabs = findViewById<View>(R.id.tabs) as TabLayout
         //tabs.getTabAt(0)!!.setIcon(R.drawable.home_btn)
 
+    }
 
+    //back btn
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean
+    {
+        return if (item?.itemId == android.R.id.home)
+        {
+            val i = Intent(this, CurrentActivity::class.java)
+            startActivity(i)
 
+            true
+        } else {
+            super.onOptionsItemSelected(item)
+        }
     }
 
 

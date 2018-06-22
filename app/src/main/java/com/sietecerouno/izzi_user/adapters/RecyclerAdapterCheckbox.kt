@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
+import com.sietecerouno.izzi_user.BaseActivity
 import com.sietecerouno.izzi_user.R
 import kotlinx.android.synthetic.main.item_custom_checkbox.view.*
 
@@ -19,7 +20,8 @@ import kotlinx.android.synthetic.main.item_custom_checkbox.view.*
 class RecyclerAdapterCheckbox(val _names:ArrayList<String>, val context: Context) : RecyclerView.Adapter<RecyclerAdapterCheckbox.MyHolder>()
 {
 
-    var isChecked: Boolean = false
+    var lastChecked: CheckBox? = null
+    var isCheckedStr: String = ""
 
     override fun onBindViewHolder(holder: MyHolder, position: Int)
     {
@@ -28,17 +30,31 @@ class RecyclerAdapterCheckbox(val _names:ArrayList<String>, val context: Context
 
 
         holder.radioBox.setOnCheckedChangeListener { buttonView, isChecked ->
-            if (isChecked) {
-                holder.radioBox.isChecked = true
-                if(holder.lastChecked != null)
-                    holder.lastChecked!!.isChecked = false
-                notifyDataSetChanged()
 
+            if(lastChecked != null)
+            {
+                lastChecked!!.isChecked = false
             }
+
+            if (isChecked)
+                BaseActivity.idAddres = _names.get(position)
+
+
+            notifyDataSetChanged()
+            lastChecked = holder.radioBox
         }
 
 
 
+    }
+
+
+
+    fun CheckBox.setCheckedWithoutAnimation(checked: Boolean) {
+        val beforeVisibility = visibility
+        visibility = View.INVISIBLE
+        isChecked = checked
+        visibility = beforeVisibility
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerAdapterCheckbox.MyHolder
@@ -56,7 +72,7 @@ class RecyclerAdapterCheckbox(val _names:ArrayList<String>, val context: Context
     {
         val name_txt = v.name_txt
         val radioBox = v.radioBox
-        var lastChecked: CheckBox? = null
+
 
         init {
             v.setOnClickListener(this)
@@ -64,8 +80,7 @@ class RecyclerAdapterCheckbox(val _names:ArrayList<String>, val context: Context
 
         override fun onClick(p0: View?) {
             Log.i("GIO", "CLICK")
-            radioBox.isChecked = true
-            lastChecked = radioBox
+
 
         }
 

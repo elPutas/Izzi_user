@@ -1,6 +1,7 @@
 package com.sietecerouno.izzi_user.adapters
 
 import android.content.Context
+import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.sietecerouno.izzi_user.R
+import com.sietecerouno.izzi_user.modals.ProfileSelectedActivity
 
 /**
  * Created by Gio on 13/06/18.
@@ -40,7 +42,8 @@ class RecyclerAdapterProfile(val _names:ArrayList<String>, val context: Context)
         }
 
         override fun onClick(p0: View?) {
-            Log.i("GIO", "CLICK")
+            var i = Intent(p0!!.context, ProfileSelectedActivity::class.java)
+            p0!!.context.startActivity(i)
         }
 
         companion object {

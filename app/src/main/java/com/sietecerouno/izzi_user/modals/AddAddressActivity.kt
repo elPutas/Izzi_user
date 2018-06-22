@@ -78,6 +78,8 @@ class AddAddressActivity : BaseActivity()
     //back btn
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         return if (item?.itemId == android.R.id.home) {
+            val i  = Intent(this, ChooseAddressActivity::class.java)
+            startActivity(i)
             finish()
             true
         } else {

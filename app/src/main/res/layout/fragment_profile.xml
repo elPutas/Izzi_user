@@ -46,7 +46,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:background="@drawable/bg_button_green"
-        android:text="Siguiente"
+        android:text="Detalles del servicio"
         android:layout_width="@dimen/width_btn"
         android:layout_height="wrap_content" />
 

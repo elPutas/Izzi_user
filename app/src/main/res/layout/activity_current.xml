@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sietecerouno.izzi_user.modals.CurrentActivity">
+
+    <FrameLayout
+        android:id="@+id/header"
+        android:background="@color/colorPrimaryLight"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+        <TextView
+            android:gravity="center"
+            android:padding="30dp"
+            android:text="Ya Sanadra reyes etsa en camino a tu casa reliazasod servicio"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:layout_marginTop="@dimen/marginItemsLinear"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_width="@dimen/width_tab_current"
+            android:layout_height="wrap_content">
+            <FrameLayout
+                android:background="@color/colorPrimaryLight"
+                android:layout_width="30dp"
+                android:layout_height="30dp"></FrameLayout>
+            <TextView
+                android:text="En camino"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_width="@dimen/width_tab_current"
+            android:layout_height="wrap_content">
+            <FrameLayout
+                android:background="@color/colorPrimaryLight"
+                android:layout_width="30dp"
+                android:layout_height="30dp"></FrameLayout>
+            <TextView
+                android:text="Trabajando"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_width="@dimen/width_tab_current"
+            android:layout_height="wrap_content">
+            <FrameLayout
+                android:background="@color/colorPrimaryLight"
+                android:layout_width="30dp"
+                android:layout_height="30dp"></FrameLayout>
+            <TextView
+                android:text="Finalizado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="@dimen/extraMarginTopLinear"
+        android:layout_marginBottom="@dimen/marginItemsLinear"
+        android:paddingTop="@dimen/padding_btn"
+        android:paddingBottom="@dimen/padding_btn"
+        android:textAlignment="center"
+        android:id="@+id/btn_select"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:background="@drawable/bg_button_green"
+        android:text="Detalles del servicio"
+        android:layout_width="@dimen/width_btn"
+        android:layout_height="wrap_content" />
+
+</android.support.constraint.ConstraintLayout>
