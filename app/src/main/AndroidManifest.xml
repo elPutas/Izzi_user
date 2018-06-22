@@ -42,7 +42,8 @@
         <activity android:name=".modals.DetailReqActivity" />
         <activity android:name=".modals.ProfileSelectedActivity" />
         <activity android:name=".modals.CurrentActivity" />
-        <activity android:name=".sections.LoadingActivity"></activity>
+        <activity android:name=".sections.LoadingActivity" />
+        <activity android:name=".utils.LookingForaHelpActivity"></activity>
     </application>
 
 </manifest>

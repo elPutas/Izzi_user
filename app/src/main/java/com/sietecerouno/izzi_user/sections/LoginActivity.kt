@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
+import android.widget.ProgressBar
 import android.widget.TextView
 import com.sietecerouno.izzi_user.BaseActivity
 import com.sietecerouno.izzi_user.R
@@ -12,6 +13,7 @@ import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : BaseActivity()
 {
+
 
     override fun onCreate(savedInstanceState: Bundle?)
     {

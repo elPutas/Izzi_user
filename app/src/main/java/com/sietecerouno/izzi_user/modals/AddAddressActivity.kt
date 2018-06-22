@@ -18,7 +18,7 @@ import com.sietecerouno.izzi_user.sections.PreHomeActivity
 
 class AddAddressActivity : BaseActivity()
 {
-    val TAG = "GIO"
+
     lateinit var db :FirebaseFirestore
     override fun onCreate(savedInstanceState: Bundle?)
     {

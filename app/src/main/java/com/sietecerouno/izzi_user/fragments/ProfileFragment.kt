@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.google.firebase.firestore.FirebaseFirestore
+import com.sietecerouno.izzi_user.BaseActivity
 
 import com.sietecerouno.izzi_user.R
 import com.sietecerouno.izzi_user.adapters.RecyclerAdapterProfile
@@ -58,7 +59,7 @@ class ProfileFragment : Fragment() {
         val recyclerView = v.findViewById<RecyclerView>(R.id.recyclerView) as RecyclerView
         recyclerView.layoutManager = linearLayoutManager
 
-        db.collection("pedidos").document("6pBLIWLjd0hbzBbU55lE").get()
+        db.collection("pedidos").document(BaseActivity.idReq).get()
                 .addOnCompleteListener{ task ->
                     if (task.isSuccessful)
                     {

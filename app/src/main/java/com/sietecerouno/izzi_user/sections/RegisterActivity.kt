@@ -3,7 +3,9 @@ package com.sietecerouno.izzi_user.sections
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
 import android.widget.EditText
+import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import com.google.android.gms.tasks.OnCompleteListener
@@ -19,6 +21,7 @@ class RegisterActivity : BaseActivity()
 
     var fbAuth = FirebaseAuth.getInstance()
     lateinit var db: FirebaseFirestore
+    lateinit var myLoading:ProgressBar
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
@@ -31,6 +34,9 @@ class RegisterActivity : BaseActivity()
         supportActionBar?.setElevation(0.0f)
 
         db = FirebaseFirestore.getInstance()
+
+        myLoading = findViewById<ProgressBar>(R.id.myLoading)
+        myLoading.visibility = View.GONE
 
         val btnSend = findViewById<TextView>(R.id.btn_next) as TextView
         btnSend.setOnClickListener{view ->
@@ -92,12 +98,16 @@ class RegisterActivity : BaseActivity()
 
     private fun authUser(_mail:String, _pass:String, _name:String, _lName:String)
     {
+
+        myLoading.visibility = View.VISIBLE
+
         fbAuth.createUserWithEmailAndPassword(_mail, _pass)
                 .addOnCompleteListener(this, OnCompleteListener<AuthResult> { task ->
             if(task.isSuccessful)
             {
                 createUser(_name, _lName, _mail, fbAuth.uid!!)
             }else{
+                myLoading.visibility = View.GONE
                 Toast.makeText(this, "Error: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
             }
         })
@@ -120,6 +130,7 @@ class RegisterActivity : BaseActivity()
                 finish()
         }.addOnFailureListener{
             println("error")
+            myLoading.visibility = View.GONE
         }
     }
 

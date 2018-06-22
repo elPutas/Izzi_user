@@ -14,10 +14,48 @@ import kotlinx.android.synthetic.main.item_custom_service.view.*
  */
 class RecyclerAdapterServices(val _names:ArrayList<String>, val context:Context) : RecyclerView.Adapter<RecyclerAdapterServices.MyHolder>()
 {
+
     override fun onBindViewHolder(holder: MyHolder, position: Int)
     {
         holder?.name_txt?.text = _names.get(position)
+
+
+        fun moreValue()
+        {
+            holder._value++
+            holder._valueStr=holder._value.toString()
+        }
+
+        fun lessValue() {
+            if(holder._value>0)
+            {
+                holder._value--
+                holder._valueStr=holder._value.toString()
+            }
+
+        }
+
+        val onClickListener : View.OnClickListener = View.OnClickListener { view ->
+
+            when(view.id)
+            {
+                R.id.btnLess -> lessValue()
+                R.id.btnMore -> moreValue()
+            }
+
+            holder.val_txt?.text = holder._valueStr
+        }
+
+        holder?.btn_less.setOnClickListener(onClickListener)
+        holder?.btn_more.setOnClickListener(onClickListener)
+
+
+
+
     }
+
+
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerAdapterServices.MyHolder
     {
@@ -34,6 +72,13 @@ class RecyclerAdapterServices(val _names:ArrayList<String>, val context:Context)
     {
         val name_txt = v.name_txt
         val val_txt = v.val_txt
+        val btn_less = v.btnLess
+        val btn_more = v.btnMore
+
+        var _value       = 0
+        var _valueStr    = ""
+
+        var service_arr : ArrayList<String>? = ArrayList()
 
         init {
             v.setOnClickListener(this)

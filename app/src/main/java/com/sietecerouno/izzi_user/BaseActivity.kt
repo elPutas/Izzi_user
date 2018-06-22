@@ -13,17 +13,19 @@ import kotlin.collections.ArrayList
 open class BaseActivity : AppCompatActivity()
 {
     companion object {
+        val TAG = "GIO"
         //user
         var idUser = ""
 
         //request
-        var idReq = ""
+        var idReq = "5TMirm0GuuODL4ebqE9n"
         var idAddres = ""
         var idAddress_txt = ""
         var idReqLapse_txt = ""
         var idReqHelpSelect_txt = ""
         var idReqTotal_txt : Int = 0 
         var idReqHelp_arr :ArrayList<String> = ArrayList()
+        var idReqService_arr :ArrayList<String> = ArrayList()
         lateinit var idReqDate_date :Date
     }
 

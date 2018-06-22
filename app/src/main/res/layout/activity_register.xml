@@ -1,61 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/paddingLinear"
-    android:gravity="center_horizontal"
     android:theme="@style/AppTheme"
     tools:context="com.sietecerouno.izzi_user.sections.RegisterActivity">
 
-    <EditText
-        android:inputType="text"
-        android:id="@+id/name"
-        android:layout_marginTop="@dimen/marginItemsLinear"
-        android:hint="Nombre"
-        android:maxLines="1"
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <EditText
-        android:inputType="text"
-        android:id="@+id/lastName"
-        android:layout_marginTop="@dimen/marginItemsLinear"
-        android:hint="Apellido"
-        android:maxLines="1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <EditText
-        android:id="@+id/mail"
-        android:inputType="textEmailAddress"
-        android:layout_marginTop="@dimen/marginItemsLinear"
-        android:hint="Correo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <EditText
-        android:id="@+id/pass"
-        android:inputType="textPassword"
-        android:layout_marginTop="@dimen/marginItemsLinear"
-        android:hint="Contraseña"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <EditText
-        android:id="@+id/passR"
-        android:inputType="textPassword"
-        android:layout_marginTop="@dimen/marginItemsLinear"
-        android:hint="Validar contraseña"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent">
+        <EditText
+            android:inputType="text"
+            android:id="@+id/name"
+            android:layout_marginTop="@dimen/marginItemsLinear"
+            android:hint="Nombre"
+            android:maxLines="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:inputType="text"
+            android:id="@+id/lastName"
+            android:layout_marginTop="@dimen/marginItemsLinear"
+            android:hint="Apellido"
+            android:maxLines="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/mail"
+            android:inputType="textEmailAddress"
+            android:layout_marginTop="@dimen/marginItemsLinear"
+            android:hint="Correo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/pass"
+            android:inputType="textPassword"
+            android:layout_marginTop="@dimen/marginItemsLinear"
+            android:hint="Contraseña"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/passR"
+            android:inputType="textPassword"
+            android:layout_marginTop="@dimen/marginItemsLinear"
+            android:hint="Validar contraseña"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-    <TextView
-        android:id="@+id/btn_next"
-        android:layout_marginTop="@dimen/extraMarginTopLinear"
-        android:paddingTop="@dimen/padding_btn"
-        android:paddingBottom="@dimen/padding_btn"
-        android:textAlignment="center"
-        android:background="@drawable/bg_button_green"
-        android:text="Enviar"
-        android:layout_width="@dimen/width_btn"
-        android:layout_height="wrap_content" />
-</LinearLayout>
+        <TextView
+            android:id="@+id/btn_next"
+            android:layout_marginTop="@dimen/extraMarginTopLinear"
+            android:paddingTop="@dimen/padding_btn"
+            android:paddingBottom="@dimen/padding_btn"
+            android:textAlignment="center"
+            android:background="@drawable/bg_button_green"
+            android:text="Enviar"
+            android:layout_width="@dimen/width_btn"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <ProgressBar
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/myLoading"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</android.support.constraint.ConstraintLayout>

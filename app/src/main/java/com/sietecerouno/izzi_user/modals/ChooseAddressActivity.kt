@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.MenuItem
 import android.view.View
+import android.widget.ProgressBar
 import android.widget.TextView
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.firestore.FirebaseFirestore
@@ -44,6 +45,9 @@ class ChooseAddressActivity : BaseActivity()
 
         val data_send :ArrayList<String> = ArrayList()
         val no_items = findViewById<TextView>(R.id.no_items)
+        val myLoading = findViewById<ProgressBar>(R.id.myLoading)
+
+        no_items.visibility = View.GONE
 
         db.collection("direcciones").get()
                 .addOnCompleteListener(OnCompleteListener<QuerySnapshot> { task ->
@@ -54,13 +58,15 @@ class ChooseAddressActivity : BaseActivity()
                         {
                             if(document.get("user").toString() == idUser)
                             {
-                                no_items.visibility = View.GONE
+                                myLoading.visibility = View.GONE
                                 data_send.add(document.get("direccion").toString())
                                 recyclerView.adapter = RecyclerAdapterCheckbox(data_send, this)
                             }
 
                         }
                     } else {
+                        no_items.visibility = View.VISIBLE
+                        myLoading.visibility = View.GONE
                         Log.i("GIO", "Error getting documents: ", task.exception)
                     }
                 })

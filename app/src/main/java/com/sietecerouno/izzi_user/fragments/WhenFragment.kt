@@ -16,7 +16,9 @@ import com.sietecerouno.izzi_user.BaseActivity
 
 import com.sietecerouno.izzi_user.R
 import com.sietecerouno.izzi_user.modals.ChooseAddressActivity
+import com.sietecerouno.izzi_user.modals.DetailReqActivity
 import com.sietecerouno.izzi_user.sections.PreHomeActivity
+import com.sietecerouno.izzi_user.utils.LookingForaHelpActivity
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.time.LocalDate
@@ -116,6 +118,8 @@ class WhenFragment : Fragment()
                 R.id.date_item -> gotoDate()
                 R.id.btn_okDate -> selectDate()
                 R.id.btn_okTime -> selectTime()
+                R.id.btn_next -> onNext()
+                R.id.btn_detail -> gotoDetail()
 
             }
         }
@@ -124,15 +128,30 @@ class WhenFragment : Fragment()
         val date_btn = v.findViewById<LinearLayout>(R.id.date_item) as LinearLayout
         val ok_btnDate = v.findViewById<TextView>(R.id.btn_okDate) as TextView
         val ok_btnTime = v.findViewById<TextView>(R.id.btn_okTime) as TextView
+        val btn_next = v.findViewById<TextView>(R.id.btn_next) as TextView
+        val btn_detail = v.findViewById<TextView>(R.id.btn_detail) as TextView
 
         address_btn.setOnClickListener (onClickListener)
         date_btn.setOnClickListener (onClickListener)
         ok_btnDate.setOnClickListener (onClickListener)
+        btn_next.setOnClickListener (onClickListener)
+        btn_detail.setOnClickListener (onClickListener)
 
 
         ok_btnTime.setOnClickListener (onClickListener)
 
         return v
+    }
+
+    private fun onNext()
+    {
+        val i = Intent(context, LookingForaHelpActivity::class.java)
+        startActivity(i)
+    }
+    private fun gotoDetail()
+    {
+        val i = Intent(context, DetailReqActivity::class.java)
+        startActivity(i)
     }
 
     private fun createRequest()
