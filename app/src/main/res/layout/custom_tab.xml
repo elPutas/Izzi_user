@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/marginItemsLinear"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:id="@+id/logo"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="40dp"
+        android:layout_height="40dp" />
+
+    <FrameLayout
+        android:id="@+id/btn_open"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@color/colorPrimaryDark"
+        android:layout_width="30dp"
+        android:layout_height="30dp" />
+
+
+    <FrameLayout
+        android:id="@+id/btn_info"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:background="@color/colorPrimaryDark"
+        android:layout_width="30dp"
+        android:layout_height="30dp" />
+
+    <FrameLayout
+        android:id="@+id/btn_chat"
+        android:layout_marginRight="@dimen/marginItemsLinear"
+        app:layout_constraintRight_toLeftOf="@id/btn_open"
+        android:background="@color/colorPrimaryDark"
+        android:layout_width="30dp"
+        android:layout_height="30dp" />
+
+</android.support.constraint.ConstraintLayout>

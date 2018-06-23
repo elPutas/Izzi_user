@@ -10,4 +10,5 @@
     <dimen name="minHeightText">120dp</dimen>
     <dimen name="width_input">100dp</dimen>
     <dimen name="width_tab_current">120dp</dimen>
+    <dimen name="width_menu">200dp</dimen>
 </resources>

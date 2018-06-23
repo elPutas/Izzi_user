@@ -26,7 +26,7 @@ class RecyclerAdapterCheckbox(val _names:ArrayList<String>, val context: Context
     override fun onBindViewHolder(holder: MyHolder, position: Int)
     {
 
-        holder?.name_txt?.text = _names.get(position)
+        holder.name_txt?.text = _names.get(position)
 
 
         holder.radioBox.setOnCheckedChangeListener { buttonView, isChecked ->

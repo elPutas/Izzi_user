@@ -3,6 +3,7 @@ package com.sietecerouno.izzi_user.sections
 
 import android.content.Intent
 import android.os.Bundle
+import android.support.v7.app.ActionBar
 import android.view.View
 import android.view.WindowManager
 import android.widget.TextView
@@ -16,9 +17,11 @@ class PreHomeActivity : BaseActivity() {
         setContentView(R.layout.activity_pre_home)
 
         //set header
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM)
+        supportActionBar?.setDisplayHomeAsUpEnabled(false)
         supportActionBar?.setTitle("")
         supportActionBar?.setElevation(0.0f)
+        supportActionBar?.setCustomView(R.layout.custom_tab)
 
 
         val btn_service = findViewById<TextView>(R.id.btn_service)
@@ -29,10 +32,7 @@ class PreHomeActivity : BaseActivity() {
             {
                 R.id.btn_service -> gotoService()
                 R.id.btn_pack -> gotoPack()
-
             }
-
-
         }
 
         btn_service.setOnClickListener( onClickListener )

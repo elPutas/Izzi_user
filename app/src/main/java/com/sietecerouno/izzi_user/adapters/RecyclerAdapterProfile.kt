@@ -18,7 +18,7 @@ class RecyclerAdapterProfile(val _names:ArrayList<String>, val context: Context)
 {
     override fun onBindViewHolder(holder: MyHolder, position: Int)
     {
-        holder?.name_txt?.text = _names.get(position)
+        holder.name_txt?.text = _names.get(position)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerAdapterProfile.MyHolder
