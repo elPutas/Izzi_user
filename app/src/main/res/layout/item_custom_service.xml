@@ -12,7 +12,7 @@
         android:textAlignment="center"
         android:textSize="20sp"
         android:padding="8dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/colorPrimaryLight"
         android:text="-"
         android:layout_width="40dp"
         android:layout_height="wrap_content" />
@@ -35,7 +35,7 @@
         android:textAlignment="center"
         android:textSize="20sp"
         android:padding="8dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/colorPrimaryLight"
         android:text="+"
         android:layout_width="40dp"
         android:layout_height="wrap_content" />

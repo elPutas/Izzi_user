@@ -4,11 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     tools:context="com.sietecerouno.izzi_user.modals.CurrentActivity">
 
     <FrameLayout
         android:id="@+id/header"
-        android:background="@color/colorPrimaryLight"
+        android:background="@drawable/mapa"
         android:layout_width="match_parent"
         android:layout_height="200dp">
         <TextView
@@ -31,10 +32,10 @@
             android:orientation="vertical"
             android:layout_width="@dimen/width_tab_current"
             android:layout_height="wrap_content">
-            <FrameLayout
-                android:background="@color/colorPrimaryLight"
+            <ImageView
+                android:src="@drawable/omw_icon"
                 android:layout_width="30dp"
-                android:layout_height="30dp"></FrameLayout>
+                android:layout_height="30dp"></ImageView>
             <TextView
                 android:text="En camino"
                 android:layout_width="wrap_content"
@@ -46,10 +47,10 @@
             android:orientation="vertical"
             android:layout_width="@dimen/width_tab_current"
             android:layout_height="wrap_content">
-            <FrameLayout
-                android:background="@color/colorPrimaryLight"
+            <ImageView
+                android:src="@drawable/working_icon"
                 android:layout_width="30dp"
-                android:layout_height="30dp"></FrameLayout>
+                android:layout_height="30dp"></ImageView>
             <TextView
                 android:text="Trabajando"
                 android:layout_width="wrap_content"
@@ -61,10 +62,10 @@
             android:orientation="vertical"
             android:layout_width="@dimen/width_tab_current"
             android:layout_height="wrap_content">
-            <FrameLayout
-                android:background="@color/colorPrimaryLight"
+            <ImageView
+                android:src="@drawable/finish_icon"
                 android:layout_width="30dp"
-                android:layout_height="30dp"></FrameLayout>
+                android:layout_height="30dp"></ImageView>
             <TextView
                 android:text="Finalizado"
                 android:layout_width="wrap_content"

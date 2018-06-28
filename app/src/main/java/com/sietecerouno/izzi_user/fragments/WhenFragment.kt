@@ -17,6 +17,7 @@ import com.sietecerouno.izzi_user.BaseActivity
 import com.sietecerouno.izzi_user.R
 import com.sietecerouno.izzi_user.modals.ChooseAddressActivity
 import com.sietecerouno.izzi_user.modals.DetailReqActivity
+import com.sietecerouno.izzi_user.sections.HomeActivity
 import com.sietecerouno.izzi_user.sections.PreHomeActivity
 import com.sietecerouno.izzi_user.utils.LookingForaHelpActivity
 import java.text.DateFormat
@@ -143,6 +144,8 @@ class WhenFragment : Fragment()
         return v
     }
 
+
+
     private fun onNext()
     {
         val i = Intent(context, LookingForaHelpActivity::class.java)
@@ -173,7 +176,11 @@ class WhenFragment : Fragment()
         }
     }
 
-    override fun onResume() {
+    override fun onResume()
+    {
+        val total :TextView = (context as HomeActivity).findViewById(R.id.total_value)
+        total.text = BaseActivity.idReqTotal_txt.toString()
+
         if(BaseActivity.idAddres!="")
             address_txt.text = BaseActivity.idAddres
         super.onResume()
@@ -181,6 +188,7 @@ class WhenFragment : Fragment()
     }
     private fun selectTime()
     {
+
         timeContainer.visibility=View.GONE
     }
 

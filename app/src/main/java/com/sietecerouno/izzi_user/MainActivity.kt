@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import com.facebook.FacebookSdk
 import com.facebook.LoggingBehavior
+import com.facebook.appevents.AppEventsLogger
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.DocumentReference
@@ -21,7 +22,8 @@ class MainActivity : BaseActivity()
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
-        FacebookSdk.sdkInitialize(applicationContext)
+
+
         if (BuildConfig.DEBUG) {
             FacebookSdk.setIsDebugEnabled(true);
             FacebookSdk.addLoggingBehavior(LoggingBehavior.INCLUDE_ACCESS_TOKENS);
@@ -31,7 +33,7 @@ class MainActivity : BaseActivity()
 
 
         val user:FirebaseUser? = FirebaseAuth.getInstance().currentUser
-        FirebaseAuth.getInstance().signOut()
+        //FirebaseAuth.getInstance().signOut()
 
         if (user != null) {
             idUser = user.uid

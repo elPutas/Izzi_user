@@ -5,34 +5,34 @@
     android:layout_marginTop="@dimen/marginItemsLinear"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <FrameLayout
+    <ImageView
         android:id="@+id/logo"
-        android:background="@color/colorPrimaryDark"
+        android:src="@drawable/mini_logo"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_width="40dp"
         android:layout_height="40dp" />
 
-    <FrameLayout
+    <ImageView
         android:id="@+id/btn_open"
         app:layout_constraintRight_toRightOf="parent"
-        android:background="@color/colorPrimaryDark"
+        android:src="@drawable/menu_h_btn"
         android:layout_width="30dp"
         android:layout_height="30dp" />
 
 
-    <FrameLayout
+    <ImageView
         android:id="@+id/btn_info"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:background="@color/colorPrimaryDark"
+        android:src="@drawable/current_icon"
         android:layout_width="30dp"
         android:layout_height="30dp" />
 
-    <FrameLayout
+    <ImageView
         android:id="@+id/btn_chat"
         android:layout_marginRight="@dimen/marginItemsLinear"
         app:layout_constraintRight_toLeftOf="@id/btn_open"
-        android:background="@color/colorPrimaryDark"
+        android:src="@drawable/chat_icon"
         android:layout_width="30dp"
         android:layout_height="30dp" />
 

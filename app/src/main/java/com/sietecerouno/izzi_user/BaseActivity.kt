@@ -23,9 +23,10 @@ open class BaseActivity : AppCompatActivity()
         var idAddress_txt = ""
         var idReqLapse_txt = ""
         var idReqHelpSelect_txt = ""
-        var idReqTotal_txt : Int = 0 
+        var idReqTotal_txt : Int = 0
         var idReqHelp_arr :ArrayList<String> = ArrayList()
         var idReqService_arr :ArrayList<String> = ArrayList()
+        var idReqServiceValue_arr :ArrayList<Int> = ArrayList()
         lateinit var idReqDate_date :Date
     }
 
