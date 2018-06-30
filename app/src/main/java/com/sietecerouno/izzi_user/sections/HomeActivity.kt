@@ -21,24 +21,23 @@ import com.sietecerouno.izzi_user.adapters.PageAdapter
 import com.sietecerouno.izzi_user.fragments.*
 import com.sietecerouno.izzi_user.modals.CurrentActivity
 import android.widget.LinearLayout
+import com.sietecerouno.izzi_user.assets.ListenerTab
 import kotlinx.android.synthetic.main.nav_tab.view.*
 
 
-class HomeActivity : BaseActivity(), OnRefreshListener
+class HomeActivity : BaseActivity(), ListenerTab
 {
 
+
     lateinit var myDrawer : DrawerLayout
+    lateinit var tabs : TabLayout
 
     private val navIcons = intArrayOf(R.drawable.service_tab_icon, R.drawable.when_tab_icon, R.drawable.profile_tab_icon, R.drawable.reserve_tab_icon)
-    private val navLabels = intArrayOf(R.string.nav_service_label, R.string.nav_service_label, R.string.nav_service_label, R.string.nav_service_label)
+    private val navLabels = intArrayOf(R.string.nav_service_label, R.string.nav_when_label, R.string.nav_profile_label, R.string.nav_reserve_label)
 
     // active state icon
     private val navIconsActive = intArrayOf(R.drawable.service_tab_icon_on, R.drawable.when_tab_icon_on, R.drawable.profile_tab_icon_on, R.drawable.reserve_tab_icon_on)
 
-    override fun refreshMe() {
-        println("update value total: " + idReqTotal_txt.toString())
-        super.refreshMe()
-    }
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
@@ -76,7 +75,7 @@ class HomeActivity : BaseActivity(), OnRefreshListener
         pageAdapter.add(ReserveFragment.newInstance("service", "test"), "Reservar")
 
         val view_pager = findViewById<ViewPager>(R.id.view_pager)
-        val tabs = findViewById<TabLayout>(R.id.tabs)
+        tabs = findViewById(R.id.tabs)
 
 
 
@@ -152,6 +151,12 @@ class HomeActivity : BaseActivity(), OnRefreshListener
         finish()
     }
 
+
+    override fun onClickTab(_goto: Int)
+    {
+        val _tab:  TabLayout.Tab  = tabs.getTabAt(_goto)!!
+        _tab.select()
+    }
 
 
 

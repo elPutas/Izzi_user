@@ -9,20 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_application_id" />
+
         <activity
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-            android:label="@string/app_name"/>
+            android:label="@string/app_name" />
 
         <provider
             android:name="com.facebook.FacebookContentProvider"
             android:authorities="com.facebook.app.FacebookContentProvider148512812260643"
             android:exported="true" />
-
 
         <activity
             android:name=".MainActivity"
@@ -58,7 +57,8 @@
         <activity android:name=".modals.ProfileSelectedActivity" />
         <activity android:name=".modals.CurrentActivity" />
         <activity android:name=".sections.LoadingActivity" />
-        <activity android:name=".utils.LookingForaHelpActivity"></activity>
+        <activity android:name=".utils.LookingForaHelpActivity" />
+        <activity android:name=".modals.AddCreditCardActivity"></activity>
     </application>
 
 </manifest>

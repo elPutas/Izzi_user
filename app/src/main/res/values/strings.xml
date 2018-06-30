@@ -6,8 +6,10 @@
     <string name="facebook_login_protocol_scheme" translatable="false">fb148512812260643</string>
 
 
+    <string name="hello_blank_fragment">empty</string>
 
-    <string name="hello_blank_fragment">Servicios</string>
     <string name="nav_service_label">Servicios</string>
     <string name="nav_when_label">Cuando</string>
+    <string name="nav_profile_label">Perfil</string>
+    <string name="nav_reserve_label">Reservar</string>
 </resources>

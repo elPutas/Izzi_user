@@ -1,5 +1,6 @@
 package com.sietecerouno.izzi_user.fragments
 
+import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
@@ -16,14 +17,19 @@ import com.sietecerouno.izzi_user.BaseActivity
 
 import com.sietecerouno.izzi_user.R
 import com.sietecerouno.izzi_user.adapters.RecyclerAdapterServices
+import com.sietecerouno.izzi_user.assets.ListenerTab
 import com.sietecerouno.izzi_user.utils.ReqData
 import kotlin.collections.ArrayList
 
 
 class ServiceFragment : Fragment()
 {
+
+
+    private lateinit var listenerTab:ListenerTab
     private val TAG = "GIO"
     lateinit var db: FirebaseFirestore
+    lateinit var btn_next:TextView
     private lateinit var linearLayoutManager: LinearLayoutManager
     private var mParam1: String? = null
     private var mParam2: String? = null
@@ -49,6 +55,18 @@ class ServiceFragment : Fragment()
         }
     }
 
+    override fun onAttach(context: Context?) {
+        // This makes sure that the container activity has implemented
+        // the callback interface. If not, it throws an exception
+        try {
+            listenerTab = activity as ListenerTab
+        } catch (e: ClassCastException) {
+            throw ClassCastException(activity.toString() + " must implement OnHeadlineSelectedListener")
+        }
+
+        super.onAttach(context)
+    }
+
     override fun onResume()
     {
         total_value.text = BaseActivity.idReqTotal_txt.toString()
@@ -62,6 +80,17 @@ class ServiceFragment : Fragment()
 
         total_value = v.findViewById<TextView>(R.id.total_value)
         total_value.text = BaseActivity.idReqTotal_txt.toString()
+
+        btn_next = v.findViewById(R.id.btn_next)
+
+        val onClickListener :View.OnClickListener = View.OnClickListener { view ->
+            when(view.id)
+            {
+                R.id.btn_next -> onNextTab(1)
+            }
+        }
+
+        btn_next.setOnClickListener(onClickListener)
 
         linearLayoutManager = LinearLayoutManager(context)
         val recyclerView = v.findViewById<RecyclerView>(R.id.recyclerView) as RecyclerView
@@ -102,6 +131,11 @@ class ServiceFragment : Fragment()
 
     }
 
+    private fun onNextTab(s: Int) {
+
+        listenerTab.onClickTab(s)
+    }
+
 
     private fun clearAll()
     {
@@ -112,7 +146,6 @@ class ServiceFragment : Fragment()
         data_lapse.clear()
         data_value.clear()
     }
-
 
 
     companion object
@@ -133,9 +166,3 @@ class ServiceFragment : Fragment()
     }
 }// Required empty public constructor
 
-interface OnRefreshListener
-{
-    public fun refreshMe() {
-
-    }
-}

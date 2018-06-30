@@ -41,6 +41,7 @@ class WhenFragment : Fragment()
 
     private lateinit var calendarView       : CalendarView
     private lateinit var calendarContainer  : LinearLayout
+    private  var total              : TextView? = null
 
     private lateinit var timePicker         : TimePicker
     private lateinit var timeContainer      : LinearLayout
@@ -72,7 +73,9 @@ class WhenFragment : Fragment()
         timeDate_arr?.add(0)
         timeDate_arr?.add(0)
 
-        calendarView = v.findViewById<CalendarView>(R.id.calendarView)
+        total = v.findViewById(R.id.total_value)
+
+        calendarView = v.findViewById(R.id.calendarView)
         calendarContainer = v.findViewById<LinearLayout>(R.id.calendarContainer)
 
         timePicker = v.findViewById<TimePicker>(R.id.timePicker)
@@ -176,16 +179,17 @@ class WhenFragment : Fragment()
         }
     }
 
-    override fun onResume()
+    override fun setUserVisibleHint(isVisibleToUser: Boolean)
     {
-        val total :TextView = (context as HomeActivity).findViewById(R.id.total_value)
-        total.text = BaseActivity.idReqTotal_txt.toString()
-
         if(BaseActivity.idAddres!="")
             address_txt.text = BaseActivity.idAddres
-        super.onResume()
 
+        if(total!=null)
+            total?.text = BaseActivity.idReqTotal_txt.toString()
+
+        super.setUserVisibleHint(isVisibleToUser)
     }
+
     private fun selectTime()
     {
 
