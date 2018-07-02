@@ -4,10 +4,12 @@ package com.sietecerouno.izzi_user.sections
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
 import android.support.design.widget.TabLayout
 import android.support.v4.view.ViewPager
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBar
+import android.support.v7.app.AlertDialog
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.MenuItem
@@ -22,10 +24,11 @@ import com.sietecerouno.izzi_user.fragments.*
 import com.sietecerouno.izzi_user.modals.CurrentActivity
 import android.widget.LinearLayout
 import com.sietecerouno.izzi_user.assets.ListenerTab
+import com.sietecerouno.izzi_user.utils.NonSwipeableViewPager
 import kotlinx.android.synthetic.main.nav_tab.view.*
 
 
-class HomeActivity : BaseActivity(), ListenerTab
+open class HomeActivity : BaseActivity(), ListenerTab
 {
 
 
@@ -74,7 +77,7 @@ class HomeActivity : BaseActivity(), ListenerTab
         pageAdapter.add(ProfileFragment.newInstance("profile", "test"), "Perfil")
         pageAdapter.add(ReserveFragment.newInstance("service", "test"), "Reservar")
 
-        val view_pager = findViewById<ViewPager>(R.id.view_pager)
+        val view_pager = findViewById<NonSwipeableViewPager>(R.id.view_pager)
         tabs = findViewById(R.id.tabs)
 
 
@@ -106,7 +109,8 @@ class HomeActivity : BaseActivity(), ListenerTab
         tabs.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener
         {
 
-            override fun onTabSelected(tab: TabLayout.Tab?) {
+            override fun onTabSelected(tab: TabLayout.Tab?)
+            {
                 val viewTab : View? = tab?.customView
                 val tab_label = viewTab?.nav_label as TextView
                 val tab_icon = viewTab?.nav_icon
@@ -151,14 +155,26 @@ class HomeActivity : BaseActivity(), ListenerTab
         finish()
     }
 
+    override fun onPostMsg(_msg: String?)
+    {
+        val dialog = AlertDialog.Builder(this@HomeActivity)
+        dialog.setMessage(_msg)
+        dialog.show()
+    }
+
+    override fun onClickTabDelay(_goto: Int) {
+        Handler().postDelayed(
+                { onClickTab(_goto) },
+                5000)
+    }
 
     override fun onClickTab(_goto: Int)
     {
-        val _tab:  TabLayout.Tab  = tabs.getTabAt(_goto)!!
+        val _tabs = findViewById<TabLayout>(R.id.tabs)
+        val _tab:  TabLayout.Tab  = _tabs.getTabAt(_goto)!!
         _tab.select()
+
     }
-
-
 
 }
 

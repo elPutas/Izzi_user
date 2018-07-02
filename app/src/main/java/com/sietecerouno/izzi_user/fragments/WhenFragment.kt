@@ -2,7 +2,6 @@ package com.sietecerouno.izzi_user.fragments
 
 import android.content.Context
 import android.content.Intent
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.support.annotation.RequiresApi
@@ -11,27 +10,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import com.google.android.gms.tasks.OnSuccessListener
+import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.sietecerouno.izzi_user.BaseActivity
 
 import com.sietecerouno.izzi_user.R
+import com.sietecerouno.izzi_user.assets.ListenerTab
 import com.sietecerouno.izzi_user.modals.ChooseAddressActivity
 import com.sietecerouno.izzi_user.modals.DetailReqActivity
-import com.sietecerouno.izzi_user.sections.HomeActivity
-import com.sietecerouno.izzi_user.sections.PreHomeActivity
 import com.sietecerouno.izzi_user.utils.LookingForaHelpActivity
-import java.text.DateFormat
 import java.text.SimpleDateFormat
-import java.time.LocalDate
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 import java.util.*
 import kotlin.collections.ArrayList
 
 
-class WhenFragment : Fragment()
+open class WhenFragment : Fragment()
 {
-
+    private lateinit var listenerTab        : ListenerTab
 
     private var myDate                      : Date = Date()
     private var mParam1                     : String? = null
@@ -41,13 +37,14 @@ class WhenFragment : Fragment()
 
     private lateinit var calendarView       : CalendarView
     private lateinit var calendarContainer  : LinearLayout
-    private  var total              : TextView? = null
+    private  var total                      : TextView? = null
 
     private lateinit var timePicker         : TimePicker
     private lateinit var timeContainer      : LinearLayout
     private lateinit var address_txt        : TextView
 
     private lateinit var db                 : FirebaseFirestore
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,6 +54,18 @@ class WhenFragment : Fragment()
         }
     }
 
+    override fun onAttach(context: Context?) {
+        // This makes sure that the container activity has implemented
+        // the callback interface. If not, it throws an exception
+        try {
+            listenerTab = activity as ListenerTab
+        } catch (e: ClassCastException) {
+            throw ClassCastException(activity.toString() + " must implement ListenerTab")
+        }
+
+        super.onAttach(context)
+    }
+
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -64,6 +73,7 @@ class WhenFragment : Fragment()
         val v = inflater.inflate(R.layout.fragment_when, container, false)
 
         db = FirebaseFirestore.getInstance()
+
 
         address_txt = v.findViewById<TextView>(R.id.address_txt)
 
@@ -151,32 +161,21 @@ class WhenFragment : Fragment()
 
     private fun onNext()
     {
+        createReq()
+    }
+
+    fun gotoLooking()
+    {
+        listenerTab.onClickTab(2)
         val i = Intent(context, LookingForaHelpActivity::class.java)
         startActivity(i)
     }
+
+
     private fun gotoDetail()
     {
         val i = Intent(context, DetailReqActivity::class.java)
         startActivity(i)
-    }
-
-    private fun createRequest()
-    {
-        val items = HashMap<String, Any>()
-        items.put("user", BaseActivity.idUser)
-        items.put("direccion", BaseActivity.idAddress_txt)
-        items.put("duractionTotal", BaseActivity.idReqLapse_txt)
-        items.put("fecha", BaseActivity.idReqDate_date)
-        items.put("estado", 1)
-        items.put("valorTotal", BaseActivity.idReqTotal_txt)
-
-
-        db.collection("pedidos").document().set(items).addOnSuccessListener {
-            void: Void? ->
-            println("error")
-        }.addOnFailureListener{
-            println("error")
-        }
     }
 
     override fun setUserVisibleHint(isVisibleToUser: Boolean)
@@ -212,6 +211,42 @@ class WhenFragment : Fragment()
     {
         val i = Intent(context, ChooseAddressActivity::class.java)
         startActivity(i)
+    }
+
+    fun createReq()
+    {
+
+
+        val refUser: DocumentReference =  db.collection("usuarios").document(BaseActivity.idUser)
+
+        val items = HashMap<String, Any>()
+        items.put("direccion", BaseActivity.idAddress_txt)
+        items.put("duracionTotal", BaseActivity.idReqLapse_txt)
+        items.put("empleada_seleccionada", BaseActivity.idReqHelpSelect_txt)
+        items.put("creacion", Date())
+        items.put("fecha", BaseActivity.idReqDate_date)
+        items.put("empleadas", BaseActivity.idReqHelp_arr)
+        items.put("valorTotal", BaseActivity.idReqTotal_txt)
+        items.put("notificacion", false)
+        items.put("servicios", BaseActivity.idReqService_arr)
+        items.put("estado", 1)
+        items.put("user",  refUser)
+
+
+        db.collection("pedidos").add(items).addOnSuccessListener(OnSuccessListener<DocumentReference> {
+            doc: DocumentReference? ->
+            println("ok")
+            if (doc != null) {
+                BaseActivity.idReq = doc.id
+            }
+            gotoLooking()
+        }).addOnFailureListener{
+            println("error")
+        }
+
+
+
+
     }
 
     object DateUtils {

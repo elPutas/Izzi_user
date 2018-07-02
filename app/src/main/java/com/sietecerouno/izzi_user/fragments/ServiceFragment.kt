@@ -61,7 +61,7 @@ class ServiceFragment : Fragment()
         try {
             listenerTab = activity as ListenerTab
         } catch (e: ClassCastException) {
-            throw ClassCastException(activity.toString() + " must implement OnHeadlineSelectedListener")
+            throw ClassCastException(activity.toString() + " must implement ListenerTab")
         }
 
         super.onAttach(context)

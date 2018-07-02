@@ -1,23 +1,26 @@
 package com.sietecerouno.izzi_user.utils
 
+import android.content.Intent
 import android.os.Bundle
-import android.provider.ContactsContract
+import android.support.design.widget.TabLayout
 import android.util.Log
 import android.view.View
 import android.widget.TextView
-import com.google.android.gms.tasks.OnSuccessListener
-import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.EventListener
 import com.google.firebase.firestore.FirebaseFirestore
 import com.sietecerouno.izzi_user.BaseActivity
 import com.sietecerouno.izzi_user.R
-import com.sietecerouno.izzi_user.adapters.RecyclerAdapterProfile
+import com.sietecerouno.izzi_user.assets.ListenerTab
+import com.sietecerouno.izzi_user.sections.HomeActivity
+import com.sietecerouno.izzi_user.sections.PreHomeActivity
 
-class LookingForaHelpActivity : BaseActivity()
+class LookingForaHelpActivity : HomeActivity()
 {
 
 
-    lateinit var db : FirebaseFirestore
+    private lateinit var db : FirebaseFirestore
+    private lateinit var listenerTab: ListenerTab
+
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
@@ -26,6 +29,8 @@ class LookingForaHelpActivity : BaseActivity()
 
         //hide header
         supportActionBar?.hide()
+        listenerTab = this
+
 
         db = FirebaseFirestore.getInstance()
 
@@ -36,7 +41,7 @@ class LookingForaHelpActivity : BaseActivity()
         val onClickListener : View.OnClickListener = View.OnClickListener { view ->
             when(view.id)
             {
-                R.id.btn_cancel -> canceReq()
+                R.id.btn_cancel -> cancelReq()
             }
         }
 
@@ -63,15 +68,27 @@ class LookingForaHelpActivity : BaseActivity()
                             idReqHelp_arr.add(doc)
                         }
 
-                        Log.i("GIO", idReqHelp_arr.toString())
+
+                        //Log.i("GIO", idReqHelp_arr.toString())
+
+                        //max size help array
+                        if(idReqHelp_arr.size>1)
+                        {
+                            finish()
+
+                        }
                     }
 
 
                 })
     }
 
-    private fun canceReq()
+    private fun cancelReq()
     {
+        val i = Intent(this, HomeActivity::class.java)
+        startActivity(i)
+
         finish()
+
     }
 }

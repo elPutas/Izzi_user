@@ -27,7 +27,7 @@ open class BaseActivity : AppCompatActivity()
         var idReqHelp_arr :ArrayList<String> = ArrayList()
         var idReqService_arr :ArrayList<String> = ArrayList()
         var idReqServiceValue_arr :ArrayList<Int> = ArrayList()
-        lateinit var idReqDate_date :Date
+        var idReqDate_date :Date = Date()
     }
 
 }
